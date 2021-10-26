@@ -1,0 +1,14 @@
+.myrow{
+    background: white;
+    border-radius: 30px; 
+    box-shadow: 12px 12px 12px #7c590e;
+    margin-top:50px;  
+    }
+    .login{
+        margin-top:15px;
+    }
+    .login img{
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        margin-top:-10%;
+    }

@@ -1,0 +1,21 @@
+<section class="login py-5">
+    <div class="container">
+        <div class="row g-0 myrow">
+            <div class="col-lg-5">
+        <img src="./assets/images/creditcard.png"  style=" width:500px;height:500px;">
+    </div>
+    <div class="col-lg-7 text-center py-4">
+    <h1>Welcome to ICTAK,</h1>
+    <p>You are one step away from being a part of ICTAK. Complete this fee payment step <br> and become a part of this exciting course. Welcome to the world of technology.</p>
+    <div class="row">
+        <div class="col-md-6">
+    <button  class="btn btn-primary" (click)="pay(studformItem.studcardnumber)" *ngIf="!tokenvalue">Pay fees</button>
+   </div>
+    <div class="col-md-6">
+    <button  class="btn btn-primary" (click)="paid()">Done</button>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>

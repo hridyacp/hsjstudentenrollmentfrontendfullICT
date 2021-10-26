@@ -1,0 +1,83 @@
+<div class="banner">
+    <div class="dives">
+        <h1 style="text-align:center" >Update Profile</h1><br>
+        <div class="col-lg-25 loginmargin">
+          <form #userlogin="ngForm" (ngSubmit)="editprofile()">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4" style="color:black;">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" [(ngModel)]="newemployeesItem.email" #email='ngModel' [class.is-invalid]='email.invalid &&(email.dirty || email.touched)' pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                <label [class.d-none]='email.valid'>Please enter your email id</label>
+                <label for="error3" id="error3" [class.d-none]='email.valid || email.untouched'>Please enter a valid email</label>
+              <label style="color:orange;font-size: medium;">{{error}}</label>
+              <label style="color:orange;font-size: medium;">{{error1}}</label>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputEmail4" style="color:black;">Phone</label>
+                <input type="text" class="form-control" id="inputEmail4" name="phone" placeholder="Phone" [(ngModel)]="newemployeesItem.phone"  #phone='ngModel' [class.is-invalid]='phone.invalid && (phone.dirty || phone.touched)' pattern='^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$' required>
+                <label [class.d-none]='phone.valid'>Please enter your phone number</label>
+                <label for="error3" id="error3" [class.d-none]='phone.valid || phone.untouched'>Please enter a valid phone number</label>
+              </div>
+             
+            </div>
+            <div class="form-group">
+              <label for="inputAddress" style="color:black;">Address</label>
+              <input type="text" class="form-control" id="inputAddress" name="address" [(ngModel)]="newemployeesItem.address" #address='ngModel' [class.is-invalid]='address.invalid && (address.dirty || address.touched)' required>
+              <label [class.d-none]='address.valid'>Please enter your current address</label>
+            </div>
+            
+              
+            <div class="col-md-6 mb-4">
+                <label for="validationDefault03" style="color:black;">Highest Qualification</label>
+                <input type="text" class="form-control" id="validationDefault03" name="qualification"  [(ngModel)]="newemployeesItem.qualification" #qualification='ngModel' [class.is-invalid]='qualification.invalid && (qualification.dirty || qualification.touched)' required>
+                <label [class.d-none]='qualification.valid'>Please enter your current address</label>
+              </div>
+            
+              <div class="form-group">
+                  <label for="inputAddress" style="color:black;">Skill Set</label>
+                  <input type="text" class="form-control" id="inputAddress" name="skill" [(ngModel)]="newemployeesItem.skill" #skill='ngModel' [class.is-invalid]='skill.invalid &&  (skill.dirty || skill.touched)' required>
+                  <label [class.d-none]='skill.valid'>Please enter your skills</label>
+                </div>
+             
+          
+            <div class="form-group">
+                <label for="employstat" style="color:black;">Employment Status</label>
+              <select class="custom-select" name="empstatus" [(ngModel)]="newemployeesItem.empstatus" #empstatus='ngModel' [class.is-invalid]='empstatus.invalid && (empstatus.dirty || empstatus.touched)' required>
+                <option value="Employed">Employed</option>
+                <option value="Unemployed">Unemployed</option>
+              </select>
+              <label [class.d-none]='empstatus.valid'>Please enter your employment status</label>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-4">
+                <label for="validationDefault03" style="color:black;">Technology Training</label>
+                <input type="text" class="form-control" id="validationDefault03" name="techtrain" [(ngModel)]="newemployeesItem.techtrain" #techtrain='ngModel' [class.is-invalid]='techtrain.invalid && (techtrain.dirty || techtrain.touched)' required>
+                <label [class.d-none]='techtrain.valid'>Please enter the technology training you completed</label>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="validationDefault04" style="color:black;">Year</label>
+                <input type="text" class="form-control" id="validationDefault04" name="year" [(ngModel)]="newemployeesItem.year" minlength="4" #year='ngModel' pattern="^[0-9]{4,4}$" [class.is-invalid]='year.invalid &&  (year.dirty || year.touched)' required>
+                <label [class.d-none]='year.valid'>Please enter the year of training</label>
+                <label class="errormsg" [class.d-none]='(year.valid && year.value<=2021) || year.untouched' style="color:red;">Please enter a valid year</label>
+              </div>
+             
+            </div>
+            
+            <div class="col-md-6 mb-4">
+            Photo<br><input type="file" id="myFile" name="filename"  id="validationDefault04" name="photo" (change)='submitImage($event)'  accept="image/*"  required>
+            <p class="h5" *ngIf="url === undefined">Upload an image to see the preview</p>
+            <img src={{newemployeesItem.photourl}} class="img-fluid rounded float-start border border-dark" alt="" style="width: 180px; height: 200px; margin-top: 5%;">
+    <!-- <label for="error5" id="error5" *ngIf="url === undefined">Please upload your recent photo</label> -->
+            </div>
+            
+            
+    
+           
+            <div class="container"> 
+            <button type="submit" class="btn btn-primary" (click)="editprofile()" [disabled]="!(userlogin.form.valid && year.value<=2021)">Update</button>
+            </div>
+          </form>
+        </div>
+    </div>
+        
+    

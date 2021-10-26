@@ -1,0 +1,78 @@
+<div style="margin-left:30%;margin-top:5%; width:60%;">
+  <h1 style="margin-left:30%;">Student Enrollment</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Fullname</th>
+            <td>{{newstudentsItem.fullname}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">Email</th> 
+            <td>{{newstudentsItem.email}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Phone</th>
+            <td>{{newstudentsItem.phone}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Address</th>
+            <td>{{newstudentsItem.address}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Place</th>
+            <td>{{newstudentsItem.place}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Qualification</th>
+            <td>{{newstudentsItem.qualification}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Pass out</th>
+            <td>{{newstudentsItem.passout}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Skill</th>
+            <td>{{newstudentsItem.skill}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Employment Status</th>
+            <td>{{newstudentsItem.empstatus}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Technical training</th>
+            <td>{{newstudentsItem.techtrain}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Year</th>
+            <td>{{newstudentsItem.year}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Course</th>
+            <td>{{newstudentsItem.course}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Fee</th>
+            <td>{{newstudentsItem.studcardnumber}}</td>
+          </tr>
+          <tr>
+            <tr>
+              <th scope="col">Fee status</th>
+              <td>{{newstudentsItem.studcsc}}</td>
+            </tr>
+            <tr>
+            <th scope="col">Photo</th>
+            <td><img [src]="newstudentsItem.photourl" style="width:150px; height:150px;"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+          <div class="col-md-6">
+      <button  class="btn btn-primary"  (click)="confirmStudent();">Confirm</button>
+    </div>
+    <div class="col-md-6">
+        <button  class="btn btn-primary" (click)="denyStudent();">Deny</button>
+      </div>
+    </div>
+</div>

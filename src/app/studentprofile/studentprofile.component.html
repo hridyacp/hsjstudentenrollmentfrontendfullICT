@@ -1,0 +1,97 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Student Dashboard
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src={{newstudentsItem.photourl}} />
+
+        <h4 class="name">{{newstudentsItem.fullname}}</h4>
+
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <!-- <a routerLink="/newcourse" >Home</a> -->
+            <a routerLink="/studentprofile" >Profile</a> 
+        </button>
+        <mat-divider></mat-divider>
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="mydiv" style="margin-left:30%; margin-top:5%;" ><h1 >Welcome </h1></div><br>
+        <div class="mydiv" style="margin-left:30%;" ><span> <h1 >  to {{newstudentsItem.fullname}}'s dashboard</h1> </span></div>
+    <div style="margin-left:10%; margin-top:10%;">
+        <table class="table table-striped" style="width:80%;">
+            <thead>
+              <tr>
+                <th scope="col">Email</th>
+                <td>{{newstudentsItem.email}}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">Phone</th>
+                <td>{{newstudentsItem.phone}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Address</th>
+                <td>{{newstudentsItem.address}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Place</th>
+                <td>{{newstudentsItem.place}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Qualification</th>
+                <td>{{newstudentsItem.qualification}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Passout Year</th>
+                <td>{{newstudentsItem.passout}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Skills</th>
+                <td>{{newstudentsItem.skill}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Emploment Status</th>
+                <td>{{newstudentsItem.empstatus}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Technical training</th>
+                <td>{{newstudentsItem.techtrain}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Year</th>
+                <td>{{newstudentsItem.year}}</td>
+              </tr>
+              <tr>
+                <th scope="col">course</th>
+                <td>{{newstudentsItem.course}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Fees</th>
+                <td>{{newstudentsItem.studcardnumber}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Fees Status</th>
+                <td>{{newstudentsItem.studcsc}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Student ID</th>
+                <td>{{newstudentsItem.studid}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>    
+    <button class="btn btn-primary" (click)="editstuddata(newstudentsItem);" style="margin-left:25%;">Edit</button>
+ </mat-sidenav-content>
+</mat-sidenav-container> 
+

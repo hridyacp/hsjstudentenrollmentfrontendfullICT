@@ -1,0 +1,140 @@
+
+<div class="dives">
+ 
+    <h1 align="center" >Student Enrollment Form</h1><br>
+    <div class="col-lg-25 loginmargin">
+      <form method="POST" #userlogin="ngForm" (ngSubmit)="userVerify()" >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+              <label for="inputPassword4" style="color:balck;">Name</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Name"  name="fullname" [(ngModel)]="studformItem.fullname"  #fullname='ngModel' pattern='^([A-Za-z ]+)?$'  [class.is-invalid]='fullname.invalid && (fullname.dirty || fullname.touched )' required> 
+              <label class="errormsg" [class.d-none]='fullname.dirty'>Please enter your full name</label>
+              <label class="errormsg" for="error3" id="error3" [class.d-none]='fullname.valid || fullname.untouched'>Please enter your full name</label>
+            </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4" style="color:balck;">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="studformItem.email" name="email" #email='ngModel' [class.is-invalid]='email.invalid &&(email.dirty || email.touched)' pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+            <label class="errormsg" [class.d-none]='email.dirty'>Please enter your email id</label>
+            <label class="errormsg" for="error3" id="error3" [class.d-none]='email.valid || email.untouched'>Please enter a valid email</label>
+            <label style="color:orange; font-size: medium;">{{error}}</label>
+            <label style="color:orange; font-size: medium;">{{error1}}</label>
+          </div>
+           <div class="form-group col-md-6">
+            <label for="inputEmail4" style="color:balck;">Phone</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="Phone" name="phone" [(ngModel)]="studformItem.phone" #phone='ngModel' [class.is-invalid]='phone.invalid && (phone.dirty || phone.touched)' pattern='^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$' required>
+            <label class="errormsg" [class.d-none]='phone.dirty'>Please enter your phone number</label>
+            <label class="errormsg" for="error3" id="error3" [class.d-none]='phone.valid || phone.untouched'>Please enter a valid phone number</label>
+          </div>
+         
+        </div>
+        <div class="form-group">
+          <label for="inputAddress" style="color:balck;">Address</label>
+          <input type="text" class="form-control" id="inputAddress"  name="address" [(ngModel)]="studformItem.address" #address='ngModel' [class.is-invalid]='address.invalid && (address.dirty || address.touched)' required>
+          <label class="errormsg" [class.d-none]='address.dirty'>Please enter your current address</label>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress" style="color:balck;">Place</label>
+          <input type="text" class="form-control" id="place"  name="place" [(ngModel)]="studformItem.place" #place='ngModel' [class.is-invalid]='place.invalid && (place.dirty || place.touched)' required>
+          <label class="errormsg" [class.d-none]='place.dirty'>Please enter your district</label>
+        </div> 
+        <div class="form-row">
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault03" style="color:balck;">Highest Qualification</label>
+            <input type="text" class="form-control" id="validationDefault03"   name="qualification" [(ngModel)]="studformItem.qualification" #qualification='ngModel' [class.is-invalid]='qualification.invalid && (qualification.dirty || qualification.touched)' required>
+            <label class="errormsg" [class.d-none]='qualification.dirty'>Please enter your Highest Qualification</label>
+          </div>
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault04" style="color:balck;">Pass Out Year</label>
+            <input type="text" class="form-control" id="validationDefault04"  minlength="4" name="passout" [(ngModel)]="studformItem.passout" #passout='ngModel'  pattern="^[0-9]{4,4}$" [class.is-invalid]='passout.invalid && (passout.dirty || passout.touched)' required>
+            <label class="errormsg" [class.d-none]='(passout.dirty)'>Please enter your passout year</label>
+            <label class="errormsg" [class.d-none]='(passout.valid && passout.value<=2021) || passout.untouched' style="color:red;">Please enter a valid year</label>
+          </div>
+         
+        </div>
+          <div class="form-group">
+              <label for="inputAddress" style="color:balck;">Skill Set</label>
+              <input type="text" class="form-control" id="inputAddress"  name="skill" [(ngModel)]="studformItem.skill" #skill='ngModel' [class.is-invalid]='skill.invalid && (skill.dirty || skill.touched)' required>
+              <label class="errormsg" [class.d-none]='skill.dirty'>Please enter your skills</label>
+            </div> 
+         
+      
+        <div class="form-group">
+          <label for="inputAddress" style="color:balck;">Employment Status</label>
+          <select class="custom-select"  name="empstatus" [(ngModel)]="studformItem.empstatus" #empstatus='ngModel' [class.is-invalid]='empstatus.invalid && (empstatus.dirty || empstatus.touched)' required>
+            <option value="">Employment Status</option>
+            <option value="Student">Student</option>
+            <option value="Employed">Employed</option>
+            <option value="Unemployed">Unemployed</option>
+          </select>
+          <label class="errormsg" [class.d-none]='empstatus.dirty'>Please select your employment status</label>
+         
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault03" style="color:balck;">Technology Training</label>
+            <input type="text" class="form-control" id="validationDefault03"  [(ngModel)]="studformItem.techtrain" name="techtrain" #techtrain='ngModel' [class.is-invalid]='techtrain.invalid && (techtrain.dirty || techtrain.touched)' required>
+            <label class="errormsg" [class.d-none]='techtrain.dirty'>Please enter the technology training you completed</label>
+          </div>
+          <div class="col-md-6 mb-4">
+            <label for="validationDefault04" style="color:balck;">Year</label>
+            <input type="text" class="form-control" id="validationDefault04"   [(ngModel)]="studformItem.year" minlength="4" name="year" #year='ngModel' pattern="^[0-9]{4,4}$" [class.is-invalid]='year.invalid && (year.dirty || year.touched)' required>
+            <label class="errormsg" [class.d-none]='year.dirty'>Please enter the year of training</label>
+            <label [class.d-none]='(year.valid && year.value<=2021) || year.untouched'  style="color:red;">Please enter a valid year</label>
+            </div>
+         
+        </div>
+        <div class="form-group">
+          <label for="validationDefault04" style="color:balck;">Course</label>
+          <select class="custom-select"  name="course" [(ngModel)]="studformItem.course" #course='ngModel' [class.is-invalid]='course.invalid &&(course.dirty || course.touched)' required>
+            <option value="">Course</option>
+            <option value={{coursesdata.coursename}} *ngFor="let coursesdata of coursesdata">{{coursesdata.coursename}}</option>
+          </select>
+          <label class="errormsg" [class.d-none]='course.dirty'>Choose Your Course</label>
+        </div>
+      
+         <div class="form-row">
+          <div class="col-md-6 mb-2">
+            <label for="validationDefault04" style="color:balck;">Fees</label>
+            <input type="text" class="form-control" id="validationDefault04"   [(ngModel)]="studformItem.studcardnumber" minlength="4" name="studcardnumber" #studcardnumber='ngModel' pattern="^[0-9]{4,}$"  [class.is-invalid]='studcardnumber.invalid && (studcardnumber.dirty || studcardnumber.touched)' required>
+            <label class="errormsg" [class.d-none]='studcardnumber.dirty'>Please enter the fee amount</label>
+            <label class="errormsg" [class.d-none]='studcardnumber.valid || studcardnumber.untouched'>Please enter the valid fee amount</label>
+          </div>
+          <div class="col-md-6 mb-2" style="margin-top:5%;">
+           <!-- <button  class="btn btn-primary" (click)="pay(studformItem.studcardnumber)">Pay</button> -->
+          </div>
+           <!-- <div class="col-md-6 mb-2">
+          <label for="validationDefault04">Expity Date</label>
+            <input type="text" class="form-control" id="validationDefault04"   [(ngModel)]="studformItem.studedate" minlength="4" name="studedate" #studedate='ngModel' [class.is-invalid]='studedate.invalid && (studedate.dirty || studedate.touched)' required>
+            <label [class.d-none]='studedate.dirty'>Enter Your Card Expiry Date</label>
+          </div>
+          <div class="col-md-6 mb-2">
+            <label for="validationDefault04">CSC</label>
+              <input type="text" class="form-control" id="validationDefault04"   [(ngModel)]="studformItem.studcsc" minlength="4" name="studcsc" #studcsc='ngModel' [class.is-invalid]='studcsc.invalid && (studcsc.dirty || studcsc.touched)' required>
+              <label [class.d-none]='studcsc.dirty'>Enter Your Card Security Code</label>
+            </div> -->
+            <div class="col-md-6 mb-4">
+              Photo<input type="file" id="myFile" name="photo"  id="image1" (change)='submitImage($event)' accept="image/*" id="validationDefault04" required>
+              
+              <p class="h5" *ngIf="url === undefined">Upload an image to see the preview</p>
+                            <img src={{url}} class="img-fluid rounded float-start border border-dark" alt="" style="width: 180px; height: 200px; margin-top: 5%;">
+              </div>
+              <label for="error5" id="error5" *ngIf="url === undefined">Please enter an image</label>
+            
+              
+         
+       
+          </div>  
+
+        <div class="container"> 
+        <button type="submit" class="btn btn-primary" [disabled]="!(userlogin.form.dirty && userlogin.form.valid && url!==undefined && year.value<=2021 && passout.value<=2021)">Enroll</button>
+        </div>
+      </form>
+    </div>  
+        
+    </div>
+    
+    
+
+
+
+

@@ -1,0 +1,190 @@
+.banner {
+    background-image: url(../../assets/images/background.jpg);
+   background-size: cover;
+    position: relative;
+    /* max-width: 800px; Maximum width */
+    margin: 0 auto; /* Center it */
+    width: 100%;
+  }
+  #mybutton, #mybutton1,#mybutton2{
+    padding: 20px;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 12pt;
+    height: 35px;
+   width: 120px;
+   padding-top: 3px;
+   margin-left: 8%;
+   background-color: rgb(53, 53, 71);
+   border: black;
+  }
+ #myButton{
+    padding: 10px;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 12pt;
+    margin-top: 15px;
+   height: 30px;
+   width: 70px;
+   padding-top: 2px;
+   background-color: gray;
+   border: gray;
+  }
+  #myButtons{
+    padding: 20px;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 12pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+ margin-left: 50%;
+   height: 40px;
+   width: 200px;
+   padding-top: 2px;
+   background-color: gray;
+   border: gray;
+  }
+  #myButtons{
+    padding: 20px;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 12pt;
+    margin-top: 15px;
+ margin-left: 50%;
+   height: 40px;
+   width: 200px;
+   padding-top: 2px;
+  }
+  #myforms1{
+    background: rgb(116, 112, 112); /* Fallback color */
+    background: rgba(116, 114, 114, 0.5); /* Black background with 0.5 opacity */
+      padding: 5px;
+     text-align: center;
+  width: 90%;
+  height: 850px;
+  border-radius: 30px;
+     box-shadow: 5px 5px 5px #181717;
+     padding-top: 2%;
+     padding-left: 10%;
+     margin-top: 5%;
+   margin-left: 5%;
+   
+   
+  }
+  #myforms1 label{
+  color:red;  
+  }
+ 
+h3{
+    font-size: medium;
+    color:black;
+  }
+  h1{
+      font-size: 35px;
+      color:black;
+  }
+#preview{
+  width: 100%;
+  height: 400px;
+  border: 1px, solid;
+  border-radius: 30 px;
+}
+.form-group, .input-group, input{
+    color: black;
+    }
+    mat-toolbar {
+      background: #464747;
+      color: white;
+  }
+  
+  mat-sidenav {
+      margin: 16px;
+      width: 200px;
+      border-right: none;
+      background: #282929;
+      color: white;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+  }
+  
+  .content {
+      height: calc(100vh - 98px);
+      border-radius: 10px;
+      margin: 16px;
+      margin-left: 32px;
+  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      font-size: 2rem;
+      color: lightgray;
+  }
+  
+  mat-sidenav-container {
+      height: calc(100vh - 65px);
+  }
+  
+  .menu-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 1rem;
+  }
+      mat-icon {
+          margin-right: 8px;
+      }
+  
+  
+  .avatar {
+      margin-top: 16px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+  }
+  .content{
+    border-radius: 15px;
+  }
+  .name {
+      margin-top: 8px;
+      font-weight: normal;
+  }
+  
+  .designation {
+      margin-top: 2px;
+      font-size: 0.7rem;
+      color: lightgrey;
+  }
+  
+  mat-divider {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .content {
+      padding: 16px;
+      
+  }
+  
+  .content > mat-card {
+      width: 200px;
+  }
+  
+  .card {
+    margin: 8%;
+    
+  }
+  
+  .card-img-top{
+      width: 100%;
+      height: 100px;
+  }
+  
+  button{
+      width: 150px;
+      margin-left:2%;
+  }
+  

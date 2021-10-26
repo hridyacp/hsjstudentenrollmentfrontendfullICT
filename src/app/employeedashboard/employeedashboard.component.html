@@ -1,0 +1,43 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    My Dashboard
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+  
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+     
+             <a [routerLink]="['/employeedashboard',{outlets:{'dasher':['employeeprofile']}}]" >Profile</a> 
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <a [routerLink]="['/employeedashboard',{outlets:{'dasher':['empstudentdata']}}]">Students</a>
+        </button>  
+      <button mat-button class="menu-button">
+            <mat-icon>search</mat-icon>
+            <a [routerLink]="['/employeedashboard',{outlets:{'dasher':['empsearchstudent']}}]">Search Students</a>
+        </button>  
+        <mat-divider></mat-divider>
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+    <div style="margin-left:10%;">
+        <br>
+        <br><br>
+        <br>
+        <div style="margin-left:30%;"><h1 >Welcome to your dashboard </h1></div><br>
+       
+        
+        <router-outlet name="dasher"></router-outlet>
+    </div>    
+ </mat-sidenav-content>
+</mat-sidenav-container> 

@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-6">
+  <img src={{newemployeesItem.photourl}} style="width:100px;height:100px; margin-left:10%;">
+</div>
+<div class="col-md-6">
+
+   <h1>{{newemployeesItem.fullname}}</h1> 
+ 
+</div>
+</div>
+   
+    <div style=" margin-top:10%;">
+        <table class="table table-striped" style="width:80%;">
+            <thead>
+              <tr>
+                <th scope="col">Email</th>
+                <td>{{newemployeesItem.email}}</td>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <th scope="col">Phone</th>
+                <td>{{newemployeesItem.phone}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Address</th>
+                <td>{{newemployeesItem.address}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Qualification</th>
+                <td>{{newemployeesItem.qualification}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Skills</th>
+                <td>{{newemployeesItem.skill}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Technical training</th>
+                <td>{{newemployeesItem.techtrain}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Year</th>
+                <td>{{newemployeesItem.year}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Employment Status</th>
+                <td>{{newemployeesItem.empstatus}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Employee Id</th>
+                <td>{{newemployeesItem.empid}}</td>
+              </tr>
+             <tr *ngFor="let dispemployeeval of dispemployeeval">
+                <th scope="col">course</th>
+                <td>{{dispemployeeval.coursename}}</td>
+              </tr> 
+            </tbody>
+          </table>
+    </div> 
+    <button class="btn btn-primary" (click)="editemploy(newemployeesItem);" style="margin-left: 40%;">Edit Profile</button> <br><br>   
+    <!-- <button class="btn btn-primary" (click)="deleteemployee(dispemployeeval);">Delete Employee</button> -->
+ 
+

@@ -1,0 +1,20 @@
+<div>
+    <h3 style="margin-left: 40%;">Students List</h3>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Sl No</th>
+        <th scope="col">Student</th>
+        <th scope="col">View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let students of students; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{students.fullname}}</td>
+        <td><button class="btn btn-primary" (click)="viewstudent(students);">View Student</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+

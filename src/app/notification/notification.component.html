@@ -1,0 +1,58 @@
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Employee Dashboard
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+  
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <a routerLink="/newcourse"  *ngIf="(_auth.loggedIn() && _auth.getRole())">Home</a>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <span>Employees</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <span>Students</span>
+        </button>
+  
+        
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <a routerLink="/notification">Notifications</a>
+        </button>
+        <mat-divider></mat-divider>
+  
+    </mat-sidenav>
+    <mat-sidenav-content> -->
+    <div style="margin-left:10%;">
+        <div class="row">
+            <div class="col-md-6">
+        <button  class="btn btn-primary" style="margin-top: 10%;" (click)="newnotificationemp();">Employee Enrollments</button>
+           <ul *ngFor="let newemployees of newemployees" style="margin-right:10%;">
+               <li>
+             <a (click)="newemployee(newemployees);">Enrollment form as new employee {{newemployees.fullname}}</a>
+               </li>
+           </ul>
+    </div>
+            <div class="col-md-6">
+        <button class="btn btn-primary" style="margin-top: 10%;" (click)="newnotificationstud();">Student Enrollments</button>
+        <ul *ngFor="let newstudents of newstudents" style="margin-right:10%;">
+            <li>
+          <a (click)="newstudent(newstudents);">Enrollment form as new student {{newstudents.fullname}}</a>
+            </li>
+        </ul>
+    </div>
+    </div>   
+</div> 
+

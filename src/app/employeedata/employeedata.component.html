@@ -1,0 +1,57 @@
+<div style="margin-left:30%;margin-top:5%; width:60%;">
+  <h1 style="margin-left:30%;">Employee Enrollment</h1>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Fullname</th>
+            <td>{{newemployeesItem.fullname}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">Email</th> 
+            <td>{{newemployeesItem.email}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Phone</th>
+            <td>{{newemployeesItem.phone}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Addresse</th>
+            <td>{{newemployeesItem.address}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Qualification</th>
+            <td>{{newemployeesItem.qualification}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Skill</th>
+            <td>{{newemployeesItem.skill}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Employment Status</th>
+            <td>{{newemployeesItem.empstatus}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Technical training</th>
+            <td>{{newemployeesItem.techtrain}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Year</th>
+            <td>{{newemployeesItem.year}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Photo</th>
+            <td><img [src]="newemployeesItem.photourl" style="width:150px; height:150px;"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+          <div class="col-md-6">
+      <button  class="btn btn-primary" (click)="confirmEmployee();">Confirm</button>
+    </div>
+    <div class="col-md-6">
+        <button  class="btn btn-primary" (click)="denyEmployee();">Deny</button>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    Employee Dashboard
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src={{newemployeesItem.photourl}} />
+
+        <h4 class="name">{{newemployeesItem.fullname}}</h4>
+
+        <button mat-button class="menu-button">
+            <mat-icon>person</mat-icon>
+            <!-- <a routerLink="/newcourse" >Home</a> -->
+            <a routerLink="/confirmedemployeedata" >Profile</a> 
+        </button>
+        <mat-divider></mat-divider>
+  
+    </mat-sidenav>
+    <mat-sidenav-content>
+    <div style="margin-left:10%; margin-top:10%;">
+        <table class="table table-striped" style="width:80%;">
+            <thead>
+              <tr>
+                <th scope="col">Email</th>
+                <td>{{newemployeesItem.email}}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">Phone</th>
+                <td>{{newemployeesItem.phone}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Address</th>
+                <td>{{newemployeesItem.address}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Qualification</th>
+                <td>{{newemployeesItem.qualification}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Skills</th>
+                <td>{{newemployeesItem.skill}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Technical training</th>
+                <td>{{newemployeesItem.techtrain}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Year</th>
+                <td>{{newemployeesItem.year}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Employment Status</th>
+                <td>{{newemployeesItem.empstatus}}</td>
+              </tr>
+              <tr>
+                <th scope="col">Employee Id</th>
+                <td>{{newemployeesItem.empid}}</td>
+              </tr>
+              <tr *ngFor="let dispemployeeval of dispemployeeval">
+                <th scope="col">Courses</th>
+                <td>{{dispemployeeval.coursename}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>    
+    <button class="btn btn-primary" (click)="deleteemployee(dispemployeeval);" style="margin-left:35%;">Delete Employee</button>
+ </mat-sidenav-content>
+</mat-sidenav-container> 

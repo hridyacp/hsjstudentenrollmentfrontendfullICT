@@ -1,0 +1,220 @@
+
+<div class="page-wrap">
+    <img
+    class="demo-bg"
+    src="./assets/images/background.jpg"
+    alt=""
+    style="height:1500px;"
+  >
+    <div class="row  myslide">
+        <div class="col-md-12" >
+          <div class="container mt-3">
+            <div id="bootstrapCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Slide Indicators -->
+              <ul class="carousel-indicators">
+                <li data-target="#bootstrapCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bootstrapCarousel" data-slide-to="1"></li>
+                <li data-target="#bootstrapCarousel" data-slide-to="2"></li>
+              </ul>
+          
+              <!-- The slides to show -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                    <div class="col-md-8">
+            <img src="./assets/images/carousel3.jpg" style="width:700px; height: 400px;">
+            <div class="carousel-caption d-none d-md-block fade-in-text">
+            <h1>Welcome to ICT Academy of Kerala</h1>
+    
+            <h2>Building the nations future</h2>
+          </div>
+        </div>
+        <div class="col-md-4 container fade-in-text" style="border:2px solid,black;background-color: rgb(39, 30, 39, 0.6); height: 400px; ">
+            <div class="centered">
+<h2>Why to associate with us?</h2>
+<ul>
+    <li>Government supported and Industry-led Program</li>
+    <li>Government scholarships and affordable fees model</li>
+    <li>One-stop shop for Students, Unemployed and Working professionals</li>
+</ul>
+</div>
+            </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                    <div class="col-md-8">
+                  <img src="./assets/images/carousel.jpg" style="width:700px; height: 400px;">
+                  <div class="carousel-caption d-none d-md-block fade-in-text">
+                    <h1>Boost your skills with</h1>
+                    <h2>new technology</h2>
+                  </div>
+                  </div>
+                  <div class="col-md-4 container fade-in-text" style="border:2px solid,black;background-color: rgb(39, 30, 39, 0.6);">
+                    <div class="centered">
+                        <h2>Our courses</h2>
+                        <ul>
+                            <li>Certified Specialist in Full Stack Development(MEAN)</li>
+                            <li>Certified Specialist in Data Science and Analytics</li>
+                            <li>Certified Specialist in Digital Marketing</li>
+                            <li>Robotic Process Automation</li>
+                        </ul>
+                        </div>
+                </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                    <div class="col-md-8">
+                  <img src="./assets/images/carousel1.jpg" style="width:700px;; height: 400px;">
+                  <div class="carousel-caption d-none d-md-block fade-in-text">
+                    <h1>Industry Connects</h1>
+                  </div>
+                  </div>
+                  <div class="col-md-4 container fade-in-text" style="border:2px solid,black;background-color: rgb(39, 30, 39, 0.6);">
+                    <div class="centered">
+                        <p>We conduct various programs which leverages the link between industry and academia. These interactions not only limits to students, but also extends to faculties too. The institute can encourage their faculties, scientists, technicians and students to interact with industry in all possible ways with the spirit of deriving mutual benefits. This increases understanding between the Institute and industries to bring the two sides emotionally and strategically closer.</p>
+                        
+                        </div>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <!--  Controls (Left and right) -->
+              <a class="carousel-control-prev" href="#bootstrapCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#bootstrapCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  
+          <div class="row" style="background-color: rgb(250, 250, 250);" >
+              <div class="col-md-10 mycard" *ngFor="let courses of courses" style="margin-left:10%;">
+                <br>
+                <br>
+                <div class="card" style=" height:250px; margin-left: 3%; margin-top:3%;">
+                  <div class="row">
+                  <div class="col-md-5">
+                  <img [src]="courses.imageurl" class="card-img" alt="..." style=" object-fit: cover;" style="width:380px; height:250px;">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <p class="card-title" [innerHTML]='courses.course'></p>
+                    <p class="card-text" [innerHTML]='courses.details'></p>
+                    <br>
+                    <br>
+                    <button class="btn btn-primary"  (click)="register()" style="margin-bottom:5%;">Apply</button>
+                  </div>
+                  </div>
+                </div>
+                  <div >    
+                  </div>
+                  </div>
+                  </div>
+  
+                 
+                 <div class="client-count-wrp mt-100 " style="margin-top:5%;">
+    <div class="container">
+        <div class="row">
+          <h2>Our Strength</h2>
+          <div class="col-sm-4"></div>
+        <div class="client-count-wrp-inner">
+          <div class="col-sm-2">
+            <div class="cards">
+              <h4>{{employeecounts.confemployees}}</h4>
+              <p>Employees</p>
+            </div></div>
+            <div class="col-sm-2">
+              <div class="cards">
+                <h4>{{studentcounts.confstudents}}</h4>
+                <p>Students</p>
+              </div></div>
+        </div>
+    </div>
+</div></div>
+        <!-- <div class="col-md-3 mycard">
+            <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./assets/images/carousel1.jpg" alt="Avatar" style="width:400px;height:500px;">
+                </div>
+                <div class="flip-card-back" style="width:400px;height:500px;">
+                  <h1>John Doe</h1>
+                  <p>Architect & Engineer</p>
+                  <p>We love that guy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mycard">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="./assets/images/carousel1.jpg" alt="Avatar" style="width:400px;height:500px;">
+                </div>
+                <div class="flip-card-back" style="width:400px;height:500px;">
+                  <h1>John Doe</h1>
+                  <p>Architect & Engineer</p>
+                  <p>We love that guy</p>
+                </div>
+              </div>
+          </div>
+  </div>
+  <div class="col-md-3 mycard">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./assets/images/carousel1.jpg" alt="Avatar" style="width:400px;height:500px;">
+        </div>
+        <div class="flip-card-back" style="width:400px;height:500px;">
+          <h1>John Doe</h1>
+          <p>Architect & Engineer</p>
+          <p>We love that guy</p>
+        </div>
+      </div>
+  </div>
+</div> -->
+</div>
+<div class="row" style="margin-top:5%">
+  <div class="col-md-12">
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile class="one"> <mat-grid-tile-header> ICT ACADEMY HQ </mat-grid-tile-header>
+    <div class="text-inside">
+        L-9, Thejaswini Building,
+        Technopark, Thiruvananthapuram,
+        Kerala, India.
+        Mobile: 7594051437
+    </div>
+    <mat-grid-tile-footer>Phone: +91-471-2700811</mat-grid-tile-footer></mat-grid-tile>
+    <mat-grid-tile class="one">
+        <mat-grid-tile-header>ICT ACADEMY-CENTRAL REGION,</mat-grid-tile-header>
+        <div class="text-inside">
+        Ground Floor,Rajamally Building,
+        Infopark, Koratty,
+        Thrissur, Kerala, India.
+        </div>
+        <mat-grid-tile-footer>Phone: 7594051437 /+91-481-2731050</mat-grid-tile-footer></mat-grid-tile>
+    <mat-grid-tile class="one">
+        <mat-grid-tile-header>ICT ACADEMY-NORTH REGION</mat-grid-tile-header>
+        <div class="text-inside">
+        2nd Floor, Ul Cyberpark Building,
+        Nellikode PO, Kozhikode,
+        Kerala, India.
+       </div>
+    <mat-grid-tile-footer>Phone: 7594051437 /+91-495-2431432 </mat-grid-tile-footer></mat-grid-tile>
+    <mat-grid-tile class="one">
+        <mat-grid-tile-header>ICT ACADEMY-SOUTH REGION</mat-grid-tile-header>
+        <div class="text-inside">
+        L-9, Thejaswini Building,
+        Technopark, Thiruvananthapuram,
+        Kerala, India.
+        </div>
+    <mat-grid-tile-footer> Phone: 7594051437/+91-471-2700811 </mat-grid-tile-footer></mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>

@@ -1,0 +1,194 @@
+
+
+<div class="row">
+
+<div class="row" *ngIf="editon">
+    <div class="col-md-12">
+    <form method="POST" id="myforms1" [formGroup]="addcourse" (ngSubmit)="addnewCourse()">
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <h1>{{title}}</h1>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+          <div class="form-row">
+            <div class="form-group col-lg-10">
+              <div class="input-group" id="one">
+               <h3>Course name</h3> 
+               <quill-editor formControlName="course"></quill-editor>
+               
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <label for="error1" id="error1" *ngIf="addcourse.get('course')?.hasError('required')">Please add a course name</label>
+            </div>
+        </div>
+         
+          <div class="form-row">
+            <div class="form-group col-lg-10">   
+              <div class="input-group" id="two">
+                <h3>Course details </h3> 
+                <quill-editor formControlName="details"></quill-editor>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+              <label for="error2" id="error2" *ngIf="addcourse.get('details')?.hasError('required')">Please enter details of course</label>
+            </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-10">
+                <div class="input-group" id="one">
+                 <h3>Course Id</h3> 
+                 <input type="text" formControlName="courseId" style="background-color: transparent; color: white;">   
+              </div>
+              <label for="error1" id="error1" *ngIf="addcourse.get('courseId')?.hasError('required')">Please add a course ID</label>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+<div class="form-row">
+    <div class="form-group col-lg-10">
+      <div class="input-group" id="five">
+       <h3>Image</h3>
+       <input type="file" id="image1" formControlName="image" (change)='submitImage($event)' accept="image/*" required>
+      <p class="h5" *ngIf="url === undefined">Upload an image to see the preview</p>
+                    <img src={{url}} class="img-fluid rounded float-start border border-dark" alt="" style="width: 180px; height: 200px; margin-top: 5%;">
+      </div>
+      <label for="error5" id="error5" *ngIf="url === undefined">Please enter an image</label>
+    </div>
+  </div>
+</div>
+</div>
+            <div class="form-row">   
+              <div class="form-group col-lg-8">     
+            <input type="submit" class="btn btn-primary" value="Submit"  [disabled]='!(addcourse.valid && url!==undefined)'>
+            <button class="btn btn-primary" [disabled]="!confirmsave"  (click)="savedata()" style="margin-left: 5%;">Save</button> 
+          </div>
+          </div>
+            </form>
+         
+</div>
+
+</div>
+</div>
+<div class="row" *ngIf="editoncourse">
+  <div class="col-md-12">
+  <form method="POST" id="myforms1" [formGroup]="updatecourse" (ngSubmit)="editCourse()">
+    <div class="form-row">
+      <div class="form-group col-md-10">
+        <h1>Update Course</h1>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-9">
+           
+        <div class="form-row">
+          <div class="form-group col-lg-10">
+            <div class="input-group" id="one">
+             <h3>Course name</h3> 
+             <quill-editor formControlName="course">{{detailsItem.course}}</quill-editor>
+             
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <label for="error1" id="error1" *ngIf="updatecourse.get('course')?.hasError('required')">Please add a course name</label>
+          </div>
+      </div>
+       
+        <div class="form-row">
+          <div class="form-group col-lg-10">   
+            <div class="input-group" id="two">
+              <h3>Course details </h3> 
+              <quill-editor formControlName="details"></quill-editor>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+            <label for="error2" id="error2" *ngIf="updatecourse.get('details')?.hasError('required')">Please enter details of course</label>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-lg-10">
+              <div class="input-group" id="one">
+               <h3>Course ID</h3> 
+               <input type="text" style="color:black;" formControlName="courseId">   
+            </div>
+            <label for="error1" id="error1" *ngIf="updatecourse.get('courseId')?.hasError('required')">Please add a course ID</label>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+<div class="form-row">
+  <div class="form-group col-lg-10">
+    <div class="input-group" id="five">
+     <h3>Image</h3>
+     <input type="file" id="image1" formControlName="image" (change)='submitImage($event)' accept="image/*">
+    <p class="h5" *ngIf="url === undefined" style="color:red;">Upload an image to see the preview</p>
+                  <img src={{url}}  class="img-fluid rounded float-start border border-dark" alt="" style="width: 180px; height: 200px; margin-top: 5%;">
+    </div>
+    <label for="error5" id="error5" *ngIf="url === undefined">Please enter an image</label>
+  </div>
+</div>
+</div>
+</div>
+          <div class="form-row">   
+            <div class="form-group col-lg-8">     
+          <input type="submit" class="btn btn-primary" value="Submit" [disabled]='!(updatecourse.valid)'>
+          <button class="btn btn-primary"   [disabled]="!updateoncourse" (click)="updatedata()" style="margin-left: 5%;">Save</button>
+        </div>
+        </div>
+          </form>
+       
+</div>
+
+</div>
+  
+  <div class="row">
+    <button class="btn btn-primary" value="edit" (click)="editing()" style="margin-left:50%; margin-top: 5%;">Add new course {{editon? 'off' : 'on'}}</button>
+ <br>
+ <br>
+  </div>
+  <div class="row" style="margin-left: 5%;">
+  <div class="col-md-6 mycard" *ngFor="let coursesdata of coursesdata">
+    <div class="card" style="width:345px;height:550px;border:none;" >
+     
+      <img src={{coursesdata.imageurl}} class="card-img-top" alt="..." style="width:345px;height:180px; border-top-left-radius: 20px; border-top-right-radius: 20px; object-fit: cover;">
+      <div class="card-body" style=" background-color:  rgb(138, 134, 138); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <p class="card-title" [innerHTML]='coursesdata.course'></p>
+        <p class="card-text" [innerHTML]='coursesdata.details'></p>
+        <p>{{coursesdata.courseId}}</p>
+      </div>
+   
+      <div class="row">
+        <div class="col-md-12">
+      <button class="btn btn-primary" value="view"  style="margin-left: 30%;" (click)="viewCourse(coursesdata)" *ngIf="(_auth.loggedIn() && _auth.getRole())">View</button>
+      </div>
+      <br>
+      <br>
+    </div>
+      <div class="row">
+        <div class="col-md-6">
+      <button class="btn btn-primary" value="edit"  (click)="editingcourse(coursesdata)">Edit</button>
+      </div>
+      <div class="col-md-6">
+      <button class="btn btn-primary" (click)="delete(coursesdata)">Delete</button>
+   </div>
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+   
+
+    
